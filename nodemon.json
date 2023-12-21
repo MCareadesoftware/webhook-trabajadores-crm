@@ -1,0 +1,10 @@
+{
+    "watch": ["src", "config"],
+    "ext": "js,json",
+    "execMap": {
+      "js": "node --experimental-modules"
+    },
+    "delay": 1000,
+    "legacyWatch": true,
+    "verbose": true
+  }

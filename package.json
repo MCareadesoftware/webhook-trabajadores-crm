@@ -1,0 +1,38 @@
+{
+  "name": "twilio-voice-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "start":"node src/index.js"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      "config"
+    ],
+    "ext": "js,json",
+    "execMap": {
+      "js": "node --experimental-modules"
+    },
+    "delay": 1000,
+    "legacyWatch": true,
+    "verbose": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ngrok/ngrok": "^0.9.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "localtunnel": "^2.0.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.2",
+    "twilio": "^3.61.0"
+  }
+}
