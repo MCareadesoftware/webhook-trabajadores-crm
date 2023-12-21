@@ -9,7 +9,7 @@ const config = require('../config/configEnvs');
 // GET /token/generate
 router.post('/generate', function (req, res) {
     const page = req.body.page;
-    const clientName = (page == "/dashboard"? "support_agent" : "customer");
+    const clientName = "mc";
 
     const accessToken = new AccessToken(config.accountSid, config.apiKey, config.apiSecret);
     accessToken.identity = clientName;
@@ -17,6 +17,7 @@ router.post('/generate', function (req, res) {
     const grant = new VoiceGrant({
       outgoingApplicationSid: config.appSid,
       incomingAllow: true,
+
     });
     accessToken.addGrant(grant);
 
