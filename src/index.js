@@ -27,7 +27,7 @@ app.use('/incoming', incoming);
 
 // Create an Express route
 app.get('/', (req, res) => {
-  res.send('Congrats you have created an ngrok web server');
+  res.send('Monstruo Creativo Webhook server');
 });
 // Start the Express server
 const server = app.listen(port, () => {
@@ -35,13 +35,7 @@ const server = app.listen(port, () => {
   
 
 
-  const tunnel = localtunnel(port, { subdomain: 'monstruocreativo123321' }, (err, tunnel) => {
-    if (err) {
-      console.error('Error establishing localtunnel connection:', err);
-      process.exit(1);
-    }
-    console.log(`Ingress established at: ${tunnel.url}`);
-  });
+
   // Get your endpoint online with ngrok
   // ngrok.connect({
   //   addr: port,
