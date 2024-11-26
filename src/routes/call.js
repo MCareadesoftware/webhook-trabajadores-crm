@@ -16,7 +16,9 @@ router.post(
     var callerId = config.twilioPhoneNumber;
     var workerId = req.body.worker
     var twiml = new VoiceResponse();
-
+    
+    console.log("REQ")
+    console.log(req)
     console.log(req.worker)
     //var dial = twiml.dial({ callerId: callerId });
 
