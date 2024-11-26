@@ -8,12 +8,12 @@ const config = require('../config/configEnvs');
 
 // GET /token/generate
 router.post('/generate', function (req, res) {
-    // const page = req.body.page;
-    // const clientName = "mc";
+    const page = req.body.page;
+    const clientName = "mc";
     const worker = req.body.worker
 
     const accessToken = new AccessToken(config.accountSid, config.apiKey, config.apiSecret);
-    accessToken.identity = worker;
+    accessToken.identity = clientName;
 
     const grant = new VoiceGrant({
       outgoingApplicationSid: config.appSid,
