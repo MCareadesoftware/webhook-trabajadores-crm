@@ -19,6 +19,9 @@ router.post('/generate', function (req, res) {
     accessToken.identity = clientName;
     accessToken.worker = worker
 
+    console.log("Token")
+    console.log(token)
+
     const grant = new VoiceGrant({
       outgoingApplicationSid: config.appSid,
       incomingAllow: true,
