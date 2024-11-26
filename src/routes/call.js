@@ -16,11 +16,14 @@ router.post(
     var callerId = config.twilioPhoneNumber;
     var twiml = new VoiceResponse();
 
+    //var dial = twiml.dial({ callerId: callerId });
+    
+    //Testeo
     var dial = 
-      twiml.dial({ 
-        callerId: callerId,
-        record: "record-from-answer"
-      });
+    twiml.dial({ 
+      callerId: callerId,
+      record: "record-from-answer"
+    });
 
     if (phoneNumber) {
       dial.number({}, phoneNumber);
