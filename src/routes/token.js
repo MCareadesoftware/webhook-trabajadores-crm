@@ -12,8 +12,12 @@ router.post('/generate', function (req, res) {
     const clientName = "mc";
     const worker = req.body.worker
 
+    console.log(worker)
+    console.log(page)
+
     const accessToken = new AccessToken(config.accountSid, config.apiKey, config.apiSecret);
     accessToken.identity = clientName;
+    accessToken.worker = worker
 
     const grant = new VoiceGrant({
       outgoingApplicationSid: config.appSid,
