@@ -19,6 +19,8 @@ router.post(
 
     //var dial = twiml.dial({ callerId: callerId });
 
+    console.log(`${config.server}/twilioMiddleware/storeRecordings?workerId=${workerId}`)
+
     //Testeo
     var dial = 
     twiml.dial({ 
