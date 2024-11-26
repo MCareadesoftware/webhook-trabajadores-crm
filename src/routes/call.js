@@ -14,15 +14,18 @@ router.post(
 
     var phoneNumber = req.body.phoneNumber;
     var callerId = config.twilioPhoneNumber;
+    var workerId = req.body.worker
     var twiml = new VoiceResponse();
 
     //var dial = twiml.dial({ callerId: callerId });
-    
+
     //Testeo
     var dial = 
     twiml.dial({ 
       callerId: callerId,
-      record: "record-from-answer"
+      record: "record-from-answer",
+      recordingStatusCallback: `${config.server}/twillioMiddleware/storeRecordings?workerId=${workerId}`,
+      recordingStatusCallbackMethod: "POST"
     });
 
     if (phoneNumber) {
