@@ -8,21 +8,18 @@ const config = require('../config/configEnvs');
 
 // GET /token/generate
 router.post('/generate', function (req, res) {
-    const page = req.body.page;
     const clientName = "mc";
-    const worker = req.body.worker
 
-    const accessToken = new AccessToken(config.accountSid, config.apiKey, config.apiSecret);
+    const accessToken = new AccessToken(config.accountSid, config.apiKey, config.apiSecret, {
+      ttl: 72000 // 20 horas de tiempo de expiración del token
+    });
+
     accessToken.identity = clientName;
-    accessToken.worker = worker
 
     const grant = new VoiceGrant({
       outgoingApplicationSid: config.appSid,
       incomingAllow: true,
     });
-
-    console.log("Token")
-    console.log(accessToken)
 
     accessToken.addGrant(grant);
 
