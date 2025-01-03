@@ -12,6 +12,8 @@ router.post(
   function (req, res, next) {
     console.log(`Received request: ${req.method} ${req.url}`);
 
+    console.log(req.body)
+
     var phoneNumber = req.body.phoneNumber;
     var callerId = config.twilioPhoneNumber;
     var workerId = req.body.workerId
