@@ -26,7 +26,7 @@ router.post(
     twiml.dial({ 
       callerId: callerId,
       record: "record-from-answer",
-      recordingStatusCallback: `${config.server}/twilioMiddleware/storeRecordings?workerId=${workerId}`,
+      recordingStatusCallback: `${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}`,
       recordingStatusCallbackMethod: "POST"
     });
 
