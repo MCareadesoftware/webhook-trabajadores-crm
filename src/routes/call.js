@@ -17,8 +17,6 @@ router.post(
     var workerId = req.body.workerId
     var twiml = new VoiceResponse();
 
-    console.log(`${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}&phoneNumber=${phoneNumber}`)
-
     //Testeo
     var dial = 
     twiml.dial({ 
