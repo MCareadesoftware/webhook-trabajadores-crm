@@ -12,17 +12,12 @@ router.post(
   function (req, res, next) {
     console.log(`Received request: ${req.method} ${req.url}`);
 
-    console.log(req.body)
-
     var phoneNumber = req.body.phoneNumber;
     var callerId = config.twilioPhoneNumber;
     var workerId = req.body.workerId
     var twiml = new VoiceResponse();
 
-    console.log(phoneNumber)
-    console.log(callerId)
-
-    console.log(`${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}&phoneNumber=${callerId}`)
+    console.log(`${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}&phoneNumber=${phoneNumber}`)
 
     //Testeo
     var dial = 
