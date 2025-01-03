@@ -19,14 +19,14 @@ router.post(
     var workerId = req.body.workerId
     var twiml = new VoiceResponse();
 
-    console.log(`${config.server}/twilioMiddleware/storeRecordings?workerId=${workerId}`)
+    console.log(`${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}&phoneNumber=${phoneNumber}`)
 
     //Testeo
     var dial = 
     twiml.dial({ 
       callerId: callerId,
       record: "record-from-answer",
-      recordingStatusCallback: `${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}`,
+      recordingStatusCallback: `${config.server}/api/twilioMiddleware/storeRecordings?workerId=${workerId}&phoneNumber=${phoneNumber}`,
       recordingStatusCallbackMethod: "POST"
     });
 
